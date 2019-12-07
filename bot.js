@@ -1,13 +1,13 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-var prefix = ""
-var adminprefix = ''
+var prefix = "$"
+var adminprefix = '$'
 
 
 //bc
 
 client.on("message", message => {
-    if (message.content.startsWith("obc")) {
+    if (message.content.startsWith("$obc")) {
                  if (!message.member.hasPermission("ADMINISTRATOR"))  return;
   let args = message.content.split(" ").slice(1);
   var argresult = args.join(' ');
@@ -23,7 +23,7 @@ client.on("message", message => {
 //bc online
 
 
-  var prefix = "";
+  var prefix = "$";
 
   client.on("message", message => {
   
@@ -57,7 +57,7 @@ client.on('ready',  () => {
     if(!message.channel.guild) return;
 let args = message.content.split(' ').slice(1).join(' ');
 if (message.content.startsWith('$adminbc')){
-if(!message.author.id === '') return;
+if(!message.author.id === '465999996400173066') return;
 message.channel.sendMessage('جار ارسال الرسالة |:white_check_mark:')
 client.users.forEach(m =>{
 m.sendMessage(args)
@@ -66,13 +66,13 @@ m.sendMessage(args)
 });
 
   client.on('message', msg => {
-    if(msg.content === 'help')
+    if(msg.content === '$help')
     msg.reply('Check Your DM :white_check_mark:')
   });
   
   
   client.on("message", message => {
-    if (message.content === "help") {
+    if (message.content === "$help") {
      const embed = new Discord.RichEmbed() 
          .setColor("#00FF00")
          .setThumbnail(message.author.avatarURL)
@@ -90,7 +90,7 @@ m.sendMessage(args)
    }
    });
 
-const developers = ["","id"]
+const developers = ["465999996400173066","id"]
 client.on('message', message => {
     var argresult = message.content.split(` `).slice(1).join(' ');
       if (!developers.includes(message.author.id)) return;
